@@ -1,0 +1,5 @@
+::res://::1541935544
+default_env.tres::Environment::1541935544::0::1::
+icon.png::StreamTexture::1541886519::1541886522::1::
+KinematicBody2D.gd::GDScript::1541916720::0::1::
+test2.tscn::PackedScene::1541935544::0::1::res://KinematicBody2D.gd<>res://icon.png
