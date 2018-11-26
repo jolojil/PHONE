@@ -1,0 +1,18 @@
+extends Sprite
+
+# Doesn't seem to actually be rotating at intended speed? :shrug:
+var rotation_speed = deg2rad(90)
+
+# Physics FPS in Project settings, for fun
+func _physics_process(delta):
+    if Input.is_mouse_button_pressed(1):
+        # For future audio, might be better to set a speed?
+        look_at(get_global_mouse_position())
+        rotation_degrees = clamp(rotation_degrees, -350, 10)
+    else:
+        # Jitters with smaller margins/larger deltas
+        # Maybe either clamp()? or abs(target-current) > abs(speed): rotation = target
+        if rotation_degrees <= -1:
+            rotate(rotation_speed * delta)
+        elif rotation_degrees >= 0:
+            rotate(-rotation_speed * delta)
